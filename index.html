@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Birr Watch</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="card">
+    <h1>Birr Watch</h1>
+
+    <!-- Loading / success / error status line -->
+    <div id="status" class="status loading">Loading rates...</div>
+
+    <!-- Convert form -->
+    <form id="convert-form" novalidate>
+      <table>
+        <tr>
+          <td class="label"><label for="amount-input">Amount (ETB)</label></td>
+          <td><input id="amount-input" type="text" inputmode="decimal" placeholder="e.g. 100" value="100"></td>
+        </tr>
+        <tr>
+          <td class="label"><label for="currency-select">To</label></td>
+          <td>
+            <select id="currency-select" disabled>
+              <option value="">Loading currencies...</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td class="label"></td>
+          <td>
+            <button id="convert-btn" type="submit" disabled>Convert</button>
+            <button id="watch-btn" type="button" disabled>+ Watch</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+
+    <div id="convert-error" class="error-area" role="alert" aria-live="polite"></div>
+    <div id="result" class="result"></div>
+
+    <!-- Watchlist -->
+    <h2>Watchlist</h2>
+    <ul id="watchlist" class="watchlist">
+      <li class="empty">No currencies watched yet. Convert one above, then hit "+ Watch".</li>
+    </ul>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
